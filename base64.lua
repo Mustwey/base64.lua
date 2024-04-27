@@ -43,7 +43,10 @@ do
 end
 
 -- character table string
-local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+local b = ""
+for i = 32, 126 do
+    b = b .. string.char(i)
+end
 
 function base64.encode(data)
   return ((data:gsub('.', function(x)
